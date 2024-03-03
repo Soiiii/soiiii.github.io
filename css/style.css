@@ -21,6 +21,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
+  margin: 0;
 }
 
 h1,
@@ -50,4 +51,51 @@ button {
 /* 버튼이 focus되면 변함 */
 button:focus {
   outline: 1px solid var(--color-accent);
+}
+
+/* Header */
+.header {
+  background-color: #050a13;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header__logo__img {
+  width: 36px;
+  height: 36px;
+}
+
+.header__logo__title {
+  font-size: 1.8rem;
+}
+
+.header__menu {
+  display: flex;
+  gap: 4px;
+}
+
+.header__menu__item {
+  padding: 8px 16px;
+}
+
+/* 헤더 메뉴에 마우스가 올라오면 hover되면 */
+.header__menu__item:hover {
+  border-bottom: 1px solid var(--color-accent);
+}
+
+/* 메뉴 아이템이 hover면서 active 클래스를 가진 상태이면 */
+.header__menu__item.active:hover {
+  border: 1px solid var(--color-accent);
+  border-radius: 4px;
 }
