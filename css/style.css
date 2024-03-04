@@ -22,6 +22,9 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
@@ -137,9 +140,10 @@ button:focus {
 }
 
 /* 메뉴 아이템이 hover면서 active 클래스를 가진 상태이면 */
-.header__menu__item.active:hover {
-  border: 1px solid var(--color-accent);
-  border-radius: 4px;
+.header__menu__item.active {
+  background-color: var(--color-accent);
+  opacity: 0.8;
+  border-radius: 10%;
 }
 
 /* Home */
