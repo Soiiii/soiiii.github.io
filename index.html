@@ -42,7 +42,7 @@
         <img class="header__logo__img" src="images/favicon.ico" alt="logo" />
         <h1 class="header__logo__title"><a href="#">Soiiii</a></h1>
       </div>
-      <nav class="header_nav">
+      <nav class="header__nav">
         <ul class="header__menu">
           <li><a class="header__menu__item active" href="#home">Home</a></li>
           <li><a class="header__menu__item" href="#about">About</a></li>
@@ -51,8 +51,8 @@
           <li><a class="header__menu__item" href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <button class="header__toggle" aria-label="navigation menu toggle button">
-        <i class="fa-solid fa-bars"> </i>
+      <button class="header__toggle" aria-label="navigation menu toggle">
+        <i class="fa-solid fa-bars"></i>
       </button>
     </header>
     <!-- Main -->
@@ -167,23 +167,26 @@
           <p class="description">Projects</p>
           <ul class="categories">
             <li>
-              <button class="category category--selected">All
+              <button class="category category--selected" data-category="all">
+                All
                 <span class="category__count">3</span>
               </button>
             </li>
             <li>
-              <button class="category">Back-end
+              <button class="category" data-category="back-end">
+                Back-end
                 <span class="category__count">3</span>
               </button>
             </li>
             <li>
-              <button class="category">Front-end
+              <button class="category" data-category="front-end">
+                Front-end
                 <span class="category__count">3</span>
               </button>
             </li>
           </ul>
           <ul class="projects">
-            <li class="project">
+            <li class="project" data-type="back-end">
               <a href="#" target="_blank">
                 <img src="images/projects/project1.webp" alt="프로젝트설명1" class="project__img"/>
                 <div class="project__metadata">
@@ -194,7 +197,7 @@
                 </div>
               </a>
             </li>
-            <li class="project">
+            <li class="project" data-type="front-end">
               <a href="#" target="_blank">
                 <img src="images/projects/project2.webp" alt="프로젝트설명2" class="project__img"/>
                 <div class="project__metadata">
@@ -203,7 +206,7 @@
                 </div>
               </a>
             </li>
-            <li>
+            <li class="project" data-type="back-end">
               <a href="#" target="_blank">
                 <img src="images/projects/project3.webp" alt="프로젝트설명3" />
                 <div>
