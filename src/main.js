@@ -1,3 +1,5 @@
+"use strict";
+
 // Header에 페이지 아래로 스크롤시 다크 스타일링 적용
 const header = document.querySelector(".header");
 // getBoundingClientRect: 헤더의 높이를 반환해줌
