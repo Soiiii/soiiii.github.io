@@ -3,6 +3,7 @@
   /* App Colors */
   --color-primary: var(--color-black);
   --color-primary-variant: var(--color-gray);
+  --color-primary-variant-point: var(--color-dark-gray);
   --color-accent: var(--color-blue);
   --color-accent-variant: var(--color-orange);
   --color-text: var(--color-white);
@@ -23,6 +24,7 @@
   --color-orange: #fd6413;
   --color-yellow: #ffc03c;
   --color-gray: #1b1e26;
+  --color-dark-gray: #2f3034;
 
   /* Size */
   --size-max-width: 1200px;
@@ -263,7 +265,7 @@ button:focus {
 
 .about__icon {
   font-size: 1.5rem;
-  margin: 1rem;
+  margin: 1rem 3rem;
   color: var(--color-primary);
   transition: all 300ms ease;
   cursor: default;
@@ -284,7 +286,7 @@ button:focus {
 }
 
 .major {
-  background-color: var(--color-primary-variant);
+  background-color: var(--color-primary-variant-point);
   padding: 0.5rem 0.5rem;
   color: var(--color-text);
   border-radius: 1rem;
@@ -378,6 +380,7 @@ button:focus {
 }
 
 .skills_tools {
+  background-color: var(--color-primary-variant-point);
   padding: 1rem;
 }
 
@@ -481,6 +484,7 @@ button:focus {
 
 .project_img {
   width: 100%;
+  align-items: center;
 }
 
 .project__metadata {
@@ -610,7 +614,7 @@ button:focus {
 
   .aboutMes {
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
   }
 
   .aboutMe {
