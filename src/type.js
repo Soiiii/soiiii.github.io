@@ -2,7 +2,7 @@
 
 new TypeIt(".home__title--strong", {
   loop: true,
-  speed: 80,
+  speed: 150,
 })
   //   .move(-25)
   //   .type("Amazing ")

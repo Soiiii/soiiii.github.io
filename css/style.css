@@ -34,7 +34,7 @@
 }
 
 * {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 html {
@@ -190,7 +190,6 @@ button:focus {
 
 .home__container {
   position: relative;
-  display: flex;
   align-items: center;
   padding-top: 3rem;
 }
@@ -239,6 +238,44 @@ button:focus {
 }
 
 /* About */
+.aboutMes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2.5rem 0;
+}
+
+.aboutMe {
+  display: flex;
+  align-items: center;
+  flex-basis: calc(33% - 1rem);
+  background-color: var(--color-text);
+  padding: 1rem 1rem;
+  color: var(--color-primary);
+  border-radius: 1rem;
+}
+
+.about__title {
+  padding: 2rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.about__icon {
+  font-size: 1.5rem;
+  margin: 1rem;
+  color: var(--color-primary);
+  transition: all 300ms ease;
+  cursor: default;
+  align-items: l;
+}
+
+.about_desc {
+  /* margin-top: 5rem; */
+  text-align: left;
+  white-space: nowrap;
+}
+
 .majors {
   display: flex;
   justify-content: space-between;
@@ -248,10 +285,12 @@ button:focus {
 
 .major {
   background-color: var(--color-primary-variant);
-  padding: 2rem 1rem;
+  padding: 0.5rem 0.5rem;
   color: var(--color-text);
   border-radius: 1rem;
   box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.38);
+  height: 250px;
+  width: 250px;
 }
 
 .major__icon {
@@ -497,8 +536,8 @@ button:focus {
 
 /* Footer */
 #contact {
-  background-color: var(--color-primary);
-  color: var(--color-text);
+  background-color: var(--color-text);
+  color: var(--color-primary);
 }
 #contact::after {
   content: "";
@@ -513,6 +552,7 @@ button:focus {
 }
 
 .contact__link {
+  color: var(--color-primary-variant);
   transition: color 250ms ease-in;
 }
 
@@ -566,6 +606,15 @@ button:focus {
   .home__title {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+  }
+
+  .aboutMes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aboutMe {
+    max-width: 25rem;
   }
 
   .majors {
