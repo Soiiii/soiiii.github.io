@@ -175,6 +175,7 @@ button:focus {
 
 /* Home */
 #home {
+  width: 100%;
   position: relative;
   background-color: var(--color-primary);
   background-image: var(--home-bg-gradient);
@@ -489,7 +490,7 @@ button:focus {
 /* Project */
 .projects {
   display: grid;
-  grid-template-columns: repeat (4, 1fr);
+  /* grid-template-columns: repeat (4, 1fr); */
   grid-template-rows: repeat(2, 1fr);
   gap: 1rem;
   transition: all 250ms ease-out;
@@ -671,7 +672,7 @@ button:focus {
   }
 
   .projects {
-    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(2, 1fr); */
   }
 
   .arrow-up {
