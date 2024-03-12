@@ -27,7 +27,9 @@
   --color-dark-gray: #2f3034;
 
   /* Size */
-  --size-max-width: 1200px;
+  /* --size-max-width: 1200px; */
+  --size-max-width: max;
+  --size-max-height: max;
 
   /* Divider */
   --divider-single-wave: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" > <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" ></path> </svg>');
@@ -36,7 +38,7 @@
 }
 
 * {
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 html {
@@ -76,14 +78,43 @@ button:focus {
   outline: 1px solid transparent;
 }
 
+/* 화면 스크롤 애니메이션 */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,500,100&subset=latin,latin-ext);
+.mydiv {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  color: #fff;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  &:nth-child(1) {
+    background: #2cc36b;
+  }
+  &:nth-child(2) {
+    background: #2980b9;
+  }
+  &:nth-child(3) {
+    background: #c0392b;
+  }
+  &:nth-child(4) {
+    background: #673ab7;
+  }
+  &:nth-child(5) {
+    background: #009688;
+  }
+}
+
 /* Common */
 .section {
   padding: 4rem;
+  scroll-snap-align: start;
   text-align: center;
 }
 
 .max-container {
   max-width: var(--size-max-width);
+  max-height: var(--size-max-height);
   margin: auto;
 }
 
@@ -187,7 +218,7 @@ button:focus {
 }
 
 #home::after {
-  content: "";
+  /* content: ""; */
   position: absolute;
   bottom: 0;
   left: 0;
@@ -202,8 +233,12 @@ button:focus {
 }
 
 .home__container {
+  height: var(--size-max-height);
   position: relative;
-  align-items: center;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
   padding-top: 3rem;
 }
 
@@ -211,10 +246,17 @@ button:focus {
   background: var(--home-avatar-svg);
   position: relative;
   bottom: -70px;
-  width: 500px;
-  height: 500px;
+  width: 250px;
   object-fit: cover;
   /* transform: scaleX(-1) rotate(-5deg); */
+}
+
+.home__content {
+  position: absolute;
+  bottom: 0;
+  /* left: 50%; */
+  transform: translateY(130%);
+  text-align: center;
 }
 
 .home__divider svg {
@@ -225,6 +267,7 @@ button:focus {
 .home__title {
   font-size: 3rem;
   margin-bottom: 1rem;
+  text-align: center; /* Center align text */
 }
 
 .home__title--strong {
@@ -233,6 +276,7 @@ button:focus {
 
 .home__description {
   font-size: 1.3rem;
+  margin-bottom: 1rem;
 }
 
 .home__contact {
@@ -251,6 +295,10 @@ button:focus {
 }
 
 /* About */
+#about {
+  padding-top: 10rem;
+}
+
 .aboutMes {
   display: flex;
   flex-wrap: wrap;
@@ -290,14 +338,14 @@ button:focus {
 
 .majors {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
+  justify-content: center;
+  gap: 2rem;
   margin: 2.5rem 0;
 }
 
 .major {
   background-color: var(--color-primary-variant-point);
-  padding: 0.5rem 0.5rem;
+  padding: 1.5rem 1.5rem;
   color: var(--color-text);
   border-radius: 1rem;
   box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.38);
@@ -324,6 +372,10 @@ button:focus {
 }
 
 /* Job */
+#experience {
+  padding-top: 10rem;
+}
+
 .jobs {
   display: flex;
   flex-wrap: wrap;
@@ -371,7 +423,7 @@ button:focus {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: calc(118% + 1.3px);
+  /* width: calc(118% + 1.3px); */
   height: 60px;
   overflow: hidden;
   line-height: 0;
@@ -590,6 +642,11 @@ button:focus {
 }
 
 @media screen and (max-width: 768px) {
+  /* 페이지 애니메이션 추가 */
+  .mydiv {
+    width: 100%;
+  }
+
   .section {
     padding: 3rem 2rem;
   }
@@ -632,6 +689,10 @@ button:focus {
     padding-bottom: 3rem;
   }
 
+  #work {
+    padding-bottom: 3rem;
+  }
+
   .home__title {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
@@ -644,10 +705,11 @@ button:focus {
 
   .aboutMe {
     max-width: 25rem;
+    align-items: center;
   }
 
   .majors {
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
   }
 

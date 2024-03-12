@@ -67,14 +67,14 @@
     <!-- Main -->
     <main>
       <!-- Home -->
-      <section id="home">
+      <section id="home" class="mydiv">
         <div class="max-container home__container">
-          <!-- <img
+          <img
             class="home__avatar"
-            src="images/profile.png"
+            src="images/programmer.png"
             alt="Soiiii&#39;s profile"
-          /> -->
-          <div>
+          />
+          <div class="home__content">
             <h2 class="home__title" aria-label="Hello, I'm Soiiii">
               안녕하세요 <br />
               <strong class="home__title--strong">
@@ -93,7 +93,7 @@
       </section>
 
       <!-- About -->
-      <section id="about" class="section max-container">
+      <section id="about" class="mydiv section max-container">
         <h2 class="title">About Me</h2>
         <p class="description">
           <br />
@@ -142,11 +142,8 @@
         </ul>
       </section>
 
-
-
-      <div class="line"></div>
       <!-- Experience -->
-      <section id="experience" class="section max-container">
+      <section id="experience" class="mydiv section max-container">
         <h2 class="title">Experience</h2><br><br>
         <ul class="jobs">
           <li class="job">
@@ -191,10 +188,10 @@
 
 
       <!-- Skills -->
-      <section id="skills" class="section">
+      <section id="skills" class="mydiv section">
         <div class="max-container">
           <h2 class="title">My Skiils</h2>
-          <p class="description">Skills & Attributes</p>
+          <!-- <p class="description">Skills & Attributes</p> -->
           <p>
             학원에서 900시간의 Java 웹 개발자 전문 과정을 수료 후
             <br />
@@ -288,7 +285,7 @@
         </div>
       </section>
       <!-- Work -->
-      <section id="work" class="section">
+      <section id="work" class="mydiv section">
         <div class="max-container">
           <h2 class="title">MY Work</h2>
           <p class="description">Projects</p>
@@ -387,5 +384,47 @@
         <p>ⓒ Soiiii - All rights reserved</p>
       </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(function() {
+        var sections = $('.mydiv');
+        var currentSectionIndex = 0;
+        currentSectionIndex = -1;
+        sections.each(function(i) {
+          if (currentSectionIndex < 0 && ($(this).offset() && $(this).offset().top >= $(window).scrollTop())) {
+            currentSectionIndex = i;
+          }
+        });
+        
+
+        $(window).on('mousewheel DOMMouseScroll', function(e) {
+          console.log(e.originalEvent.deltaY)
+          // if(e.originalEvent.deltaY > 0) {
+
+          // }
+          if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
+            if (currentSectionIndex > 0) {
+              currentSectionIndex--;
+            }
+          } else {
+            if (currentSectionIndex < sections.length - 1) { // Added -1 to avoid going beyond the last element
+              currentSectionIndex++;
+            }
+          }
+          if (sections.eq(currentSectionIndex) && sections.eq(currentSectionIndex).offset()) {
+            $('html,body').stop().animate({
+              scrollTop: sections.eq(currentSectionIndex).offset().top
+            }, 500);
+          }
+          // return false;
+        });
+        $(window).resize(function() {
+          if (sections.eq(currentSectionIndex) && sections.eq(currentSectionIndex).offset()) { 
+            $('html,body').scrollTop(sections.eq(currentSectionIndex).offset().top);
+          }
+        });
+    
+    });
+    </script>
   </body>
 </html>
