@@ -19,9 +19,10 @@
   --home-bg-gradient-opposite: linear-gradient(
     180deg,
     rgb(0, 0, 0) 0%,
-    rgb(0, 51, 55) 50%,
-    rgb(24, 65, 68) 75%,
-    rgb(39, 101, 106) 100%
+    rgb(20, 36, 37) 20%,
+    rgb(13, 55, 49) 30%,
+    rgb(21, 86, 77) 50%,
+    rgb(2, 131, 118) 100%
   );
 
   --home-bg-gradient-green: linear-gradient(
@@ -111,13 +112,13 @@ button:focus {
   align-items: center;
   justify-content: center;
   &:nth-child(1) {
-    background: #2cc36b;
+    background: var(--color-);
   }
   &:nth-child(2) {
     background-image: var(--home-bg-gradient-opposite);
   }
   &:nth-child(3) {
-    background: #009688;
+    background: #028376;
   }
   &:nth-child(4) {
     background: #673ab7;
@@ -146,8 +147,8 @@ button:focus {
 }
 
 .title__bold {
-  /* font-size: 3rem; */
-  margin: 1rem;
+  font-size: 3rem;
+  /* margin: 1rem; */
   padding-top: 1rem;
   color: var(--color-primary-variant-point);
 }
@@ -408,7 +409,7 @@ button:focus {
 
 /* Job */
 #experience {
-  padding-top: 10rem;
+  padding-top: 6rem;
 }
 
 .experiences {
